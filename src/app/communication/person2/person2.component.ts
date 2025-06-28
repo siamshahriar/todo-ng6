@@ -19,10 +19,6 @@ export class Person2Component implements OnInit {
     });
   }
 
-  ngDoCheck() {
-    console.log(this.messages);
-  }
-
   sendMessage(): void {
     if (this.newMessage.trim() !== "") {
       const currentTime = new Date().toISOString();
