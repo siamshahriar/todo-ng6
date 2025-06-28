@@ -1,0 +1,91 @@
+<div class="container">
+  <h2>Todo</h2>
+
+  <!-- Add User Form -->
+  <form [formGroup]="userForm" (ngSubmit)="addUser()" class="form-row">
+    <input type="text" formControlName="name" placeholder="Enter Name" />
+
+    <input type="number" formControlName="age" placeholder="Enter Age" />
+
+    <button class="add-btn" type="submit">+</button>
+  </form>
+  <div
+    class="error"
+    *ngIf="userForm.get('name').touched && userForm.get('name').invalid"
+  >
+    <span *ngIf="userForm.get('name').errors?.required">Name is required.</span>
+  </div>
+  <div
+    class="error"
+    *ngIf="userForm.get('age').touched && userForm.get('age').invalid"
+  >
+    <span *ngIf="userForm.get('age').errors?.required">Age is required.</span>
+    <span *ngIf="userForm.get('age').errors?.min">Age must be at least 0.</span>
+  </div>
+
+  <!-- Users Table -->
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th class="action">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i + 1 }}</td>
+
+        <!-- Display or Edit Name -->
+        <td *ngIf="editingIndex !== i">{{ user.name }}</td>
+        <td *ngIf="editingIndex === i">
+          <div [formGroup]="editingUserForm">
+            <input formControlName="name" />
+          </div>
+        </td>
+
+        <!-- Display or Edit Age -->
+        <td *ngIf="editingIndex !== i">{{ user.age }}</td>
+        <td *ngIf="editingIndex === i">
+          <div [formGroup]="editingUserForm">
+            <input formControlName="age" type="number" />
+          </div>
+        </td>
+
+        <!-- Action Buttons -->
+        <td class="action">
+          <button
+            *ngIf="editingIndex === null"
+            (click)="editUser(i)"
+            class="button-3"
+          >
+            Edit
+          </button>
+          <button
+            *ngIf="editingIndex !== null"
+            (click)="saveUser()"
+            class="button-3"
+          >
+            Save
+          </button>
+
+          <button
+            *ngIf="editingIndex === null"
+            (click)="deleteUser(i)"
+            class="button-3 button-2"
+          >
+            Delete
+          </button>
+          <button
+            *ngIf="editingIndex !== null"
+            (click)="cancelEdit()"
+            class="button-3 button-2"
+          >
+            Cancel
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

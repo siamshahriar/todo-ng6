@@ -1,0 +1,36 @@
+<div class="chat-section">
+  <!-- Header -->
+  <div class="chat-header">👥 Person 2</div>
+
+  <!-- Messages Area -->
+  <div class="chat-messages" id="chatMessages">
+    <ng-container *ngFor="let message of messages">
+      <!-- Received Message -->
+      <div *ngIf="message.sender === 'Person 1'" class="message received">
+        <div class="bubble">{{ message.content }}</div>
+        <small class="timestamp">{{
+          message.timestamp | date : "shortTime"
+        }}</small>
+      </div>
+      <!-- Sent Message -->
+      <div *ngIf="message.sender === 'Person 2'" class="message sent">
+        <div class="bubble">{{ message.content }}</div>
+        <small class="timestamp">{{
+          message.timestamp | date : "shortTime"
+        }}</small>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Send Message Section -->
+  <div class="chat-input">
+    <input
+      type="text"
+      id="messageInput"
+      [(ngModel)]="newMessage"
+      placeholder="Type a message..."
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()" id="sendBtn">➤</button>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+/* Chat Container */
+.chat-section {
+  max-width: 500px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+/* Chat Header */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Messages Area */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 300px;
+  max-height: 300px; /* Fixed height */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Bubble styles */
+.bubble {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Received message (Left-aligned) */
+.received {
+  align-self: flex-start;
+}
+
+.received .bubble {
+  background-color: #f1f0f0;
+  color: #333;
+  border-top-left-radius: 8px;
+}
+
+/* Timestamp for received message */
+.received .timestamp {
+  align-self: flex-start;
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+/* Sent message (Right-aligned) */
+.sent {
+  align-self: flex-end;
+}
+
+.sent .bubble {
+  background-color: #007bff;
+  color: white;
+  border-top-right-radius: 8px;
+}
+
+.sent .timestamp {
+  align-self: flex-end;
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* Send Message Input */
+.chat-input {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  background-color: transparent;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: rgba(200, 200, 200, 0.2);
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.chat-input input:focus {
+  background: rgba(200, 200, 200, 0.3);
+}
+
+.chat-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
