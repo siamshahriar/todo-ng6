@@ -1,0 +1,61 @@
+<div class="parent-component">
+  <div class="ChildComponent">
+    <p class="header">Child Component part</p>
+    <div *ngFor="let employee of employees">
+      <app-child
+        [employee]="employee"
+        (shortListClicked)="getShortlisted($event)"
+        [shortListed]="shortListed"
+      ></app-child>
+    </div>
+  </div>
+
+  <div>
+    <p class="parent-component-indicator">Parent Component Part</p>
+    <p class="header">Shortlisted Candidates: {{ shortListed.length }}</p>
+
+    <div class="shortlisted-users">
+      <p *ngIf="shortListed.length === 0" class="no-shortlisted">
+        No candidates shortlisted yet.
+      </p>
+    </div>
+
+    <table *ngIf="shortListed.length > 0" class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Designation</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of shortListed; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.age }}</td>
+          <td>{{ user.designation }}</td>
+          <td>
+            <button class="remove" (click)="removeFromShortList(i)">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div>
+    <div class="parent-component-indicator">
+      <p>From Parent</p>
+      <button (click)="callChildFunction()" class="fromparentButton">
+        From Parent
+      </button>
+    </div>
+    <div class="ChildComponent">
+      <p class="header">Child Component part</p>
+      <app-child2></app-child2>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+.card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 20px 50px;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-age,
+.user-designation {
+  font-size: 16px;
+  color: #555;
+  margin: 6px 0;
+}
+
+.user-age span,
+.user-designation span {
+  font-weight: bold;
+  color: #000;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.shortlisted {
+  background-color: #28a745;
+  color: white;
+}

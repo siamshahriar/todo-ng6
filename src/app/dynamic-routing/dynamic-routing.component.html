@@ -1,0 +1,19 @@
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Example static data -->
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+        <button [routerLink]="['/user', user.id]">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

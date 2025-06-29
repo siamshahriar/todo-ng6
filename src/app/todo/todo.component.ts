@@ -33,13 +33,9 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {}
 
-  ngDoCheck() {
-    console.log(this.users);
-  }
-
   // Add new user
   addUser() {
-    console.log(this.userForm);
+    // console.log(this.userForm);
     if (this.userForm.valid) {
       this.users.push(this.userForm.value);
       this.userForm.reset();

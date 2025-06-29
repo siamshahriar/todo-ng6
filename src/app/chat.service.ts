@@ -7,7 +7,11 @@ import { BehaviorSubject } from "rxjs";
 export class ChatService {
   // Initial messages array
   private initialMessages = [
-    { sender: "Person 1", content: "Hello", timestamp: "2023-10-01T12:00:00Z" },
+    {
+      sender: "Person 1",
+      content: "Hello",
+      timestamp: "2023-10-01T12:00:00Z",
+    },
     {
       sender: "Person 2",
       content: "Hi, how are you",

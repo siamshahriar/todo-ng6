@@ -1,0 +1,19 @@
+<div #card class="card">
+  <div class="card-content">
+    <h2 class="user-name">{{ employee.name }}</h2>
+    <p class="user-age">
+      Age: <span>{{ employee.age }}</span>
+    </p>
+    <p class="user-designation">
+      Designation: <span>{{ employee.designation }}</span>
+    </p>
+    <button
+      (click)="setShortListed()"
+      class="button"
+      [disabled]="isShortListed"
+      [ngClass]="isShortListed ? 'shortlisted' : ''"
+    >
+      {{ isShortListed ? "Shortlisted" : "Shortlist" }}
+    </button>
+  </div>
+</div>

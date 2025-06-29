@@ -1,0 +1,105 @@
+.header {
+  font-size: 24px;
+  color: #333;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.user-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-table thead {
+  background-color: #f4f4f4;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.status.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.parent-component {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Ensure only three children are spaced evenly */
+  > * {
+    flex: 1 1 0;
+    max-width: 32%;
+  }
+}
+
+.ChildComponent {
+  border: 1px solid #ccc;
+}
+
+.remove {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: #d9363e;
+  }
+}
+
+.parent-component-indicator {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.fromparentButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
